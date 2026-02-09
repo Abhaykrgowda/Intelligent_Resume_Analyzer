@@ -3,7 +3,7 @@ from src.core.pipeline import run_pipeline
 from src.utils.logger import logger
 
 def main():
-    resume_path = "data/incoming_resumes/resume_ai_test.txt"
+    resume_path = "data/incoming_resumes/resume_001.txt"
     job_path = "data/job_profiles/python_developer.json"
 
     logger.info("Application started")

@@ -1,42 +1,70 @@
 import json
-from pathlib import Path
-
+import re
 from src.ai.ai_client import call_ai
 from src.models.candidate import Candidate
-from src.utils.exceptions import ParseError
 
 
-# Resolve path relative to this file:
-# ai_extraction.py → src/ai/ → src/config/prompts.json
-SRC_DIR = Path(__file__).resolve().parents[1]   # points to src/
-PROMPTS_PATH = SRC_DIR / "config" / "prompts.json"
-
-PROMPTS = json.loads(PROMPTS_PATH.read_text(encoding="utf-8"))
-
-
-def ai_extract_resume(resume_text: str) -> Candidate:
+def normalize_experience(exp):
     """
-    Uses LLM to extract structured resume data when rule-based parsing is insufficient
+    Normalize AI-produced experience into integer years.
+    Handles int, string, dict, or None.
+    """
+    if exp is None:
+        return 0
+
+    if isinstance(exp, int):
+        return exp
+
+    if isinstance(exp, str):
+        # Examples: "4 years", "around 3 yrs"
+        digits = "".join(ch for ch in exp if ch.isdigit())
+        return int(digits) if digits else 0
+
+    if isinstance(exp, dict):
+        # Example: {"years": 4}
+        if "years" in exp and isinstance(exp["years"], int):
+            return exp["years"]
+
+    return 0
+
+
+def extract_json_from_text(text: str) -> dict | None:
+    """
+    Extract the first valid JSON object from AI response text.
     """
     try:
-        response = call_ai(
-            system_prompt=PROMPTS["extraction"],
-            user_input=resume_text
-        )
+        match = re.search(r"\{.*\}", text, re.DOTALL)
+        if not match:
+            return None
+        return json.loads(match.group())
+    except Exception:
+        return None
 
-        # AI is instructed to return STRICT JSON
-        data = json.loads(response)
 
-        return Candidate(
-            name=data.get("name"),
-            email=data.get("email"),
-            skills=data.get("skills", []),
-            experience=data.get("experience", 0),
-            education=data.get("education")
-        )
+def ai_extract_resume(resume_text: str) -> Candidate | None:
+    """
+    Uses AI to extract structured resume data.
+    Returns Candidate on success, None on failure.
+    NEVER raises due to AI errors.
+    """
 
-    except json.JSONDecodeError:
-        raise ParseError("AI extraction failed: Invalid JSON format")
+    response = call_ai(
+        system_prompt="Extract resume data into strict JSON.",
+        user_input=resume_text
+    )
 
-    except Exception as e:
-        raise ParseError(f"AI extraction failed: {str(e)}")
+    # AI unavailable
+    if response is None:
+        return None
+
+    data = extract_json_from_text(response)
+    if data is None:
+        return None
+
+    return Candidate(
+        name=data.get("name"),
+        email=data.get("email"),
+        skills=data.get("skills", []) if isinstance(data.get("skills"), list) else [],
+        experience=normalize_experience(data.get("experience")),
+        education=data.get("education")
+    )

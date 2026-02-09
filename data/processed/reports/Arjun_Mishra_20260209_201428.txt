@@ -1,0 +1,47 @@
+
+==================================================
+            CANDIDATE ANALYSIS REPORT
+==================================================
+
+Candidate Name : Arjun Mishra
+Email          : None
+Job Role       : Python Developer
+Match Score    : 0/100
+
+------------------ SKILLS -------------------------
+Matched Skills :
+None
+
+Missing Skills :
+python, sql, flask, git
+
+---------------- AI EXPLANATION -------------------
+**Job Match Analysis**
+
+Based on the provided candidate and job details, we can analyze the match result as follows:
+
+**Education Match:**
+The candidate has a Bachelor of Science in Computer Science degree from Visvesvaraya Technological University, which is not a BTECH degree. Although the candidate has a degree in Computer Science, it does not match the required education for the job (BTECH). Therefore, the candidate does not meet the education requirement.
+
+**Experience Match:**
+The candidate has 0 years of experience, which is less than the minimum required experience of 2 years for the job. Therefore, the candidate does not meet the experience requirement.
+
+**Skills Match:**
+The candidate has no skills listed, and the required skills for the job are 'python', 'flask', 'sql', and 'git'. Since the candidate has no skills, all the required skills are missing. Therefore, the candidate does not meet the skills requirement.
+
+**Overall Match Result:**
+Based on the analysis above, the candidate does not match the job requirements. The candidate lacks the required education, experience, and skills for the position.
+
+**Recommendation:**
+To improve the match result, the candidate should:
+
+1. Update their education to a BTECH degree or a degree in a related field.
+2. Gain more experience in the field, ideally 2+ years.
+3. Develop the required skills for the job, such as Python, Flask, SQL, and Git.
+
+By addressing these gaps, the candidate can increase their chances of matching the job requirements.
+
+---------------- RECOMMENDATION ------------------
+✗ NOT RECOMMENDED
+
+==================================================

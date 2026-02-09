@@ -1,0 +1,51 @@
+
+==================================================
+            CANDIDATE ANALYSIS REPORT
+==================================================
+
+Candidate Name : Arjun Mishra
+Email          : None
+Job Role       : Python Developer
+Match Score    : 0/100
+
+------------------ SKILLS -------------------------
+Matched Skills :
+None
+
+Missing Skills :
+git, sql, python, flask
+
+---------------- AI EXPLANATION -------------------
+**Job Match Analysis**
+
+Based on the provided candidate and job information, the match result indicates that the candidate does not match the job requirements. Here's a breakdown of the reasons:
+
+1. **Education**: The job requires a BTECH degree, but the candidate has a Bachelor of Science in Computer Science degree from Visvesvaraya Technological University. Although both are technical degrees, the job's specific requirement for BTECH is not met.
+2. **Experience**: The job requires at least 2 years of experience, but the candidate has 0 years of experience. This is a significant mismatch.
+3. **Skills**: The job requires proficiency in Python, Flask, SQL, and Git. The candidate's skills list is empty, indicating a complete lack of required skills.
+
+The match result highlights the missing skills, which are:
+
+* Git
+* SQL
+* Python
+* Flask
+
+To improve the match result, the candidate should focus on acquiring the required skills and gaining relevant experience. The candidate's education background is a good start, but additional education or training may be necessary to meet the job's requirements.
+
+**Recommendations for the Candidate:**
+
+1. Acquire the required skills, such as Python, Flask, SQL, and Git, through online courses, tutorials, or boot camps.
+2. Gain relevant work experience, ideally in a Python development role, to meet the job's minimum experience requirement.
+3. Consider pursuing additional education or training to meet the job's specific education requirements.
+
+**Recommendations for the Hiring Manager:**
+
+1. Consider providing training or upskilling opportunities for candidates who demonstrate potential but lack specific skills.
+2. Be open to candidates with transferable skills or experience in related fields, but be prepared to invest in their development.
+3. Clearly communicate the job requirements and expectations to candidates to ensure they understand what is needed to succeed in the role.
+
+---------------- RECOMMENDATION ------------------
+✗ NOT RECOMMENDED
+
+==================================================

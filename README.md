@@ -1,26 +1,15 @@
 # Intelligent Resume Analyzer
 
-Analyze a resume against a job profile, score the match, and generate a plain-text report. The pipeline blends rule-based parsing with optional LLM extraction and explanation.
+Analyze resumes against job profiles, score the match, and export a clear, plain-text report. The pipeline combines deterministic parsing with optional LLM extraction and explanation.
 
-## Features
-- Rule-based resume parsing with confidence scoring.
-- AI fallback extraction when parsing confidence is low.
-- Skill matching with fuzzy logic and configurable thresholds.
-- AI-generated match explanation (optional).
-- Text report export to `data/processed/reports/`.
+## Highlights
+- Rule-based parsing with confidence scoring
+- AI fallback extraction for low-confidence parses
+- Fuzzy skill matching with configurable thresholds
+- Optional AI match explanation
+- Text report export to `data/processed/reports/`
 
-## How It Works
-1. Parse resume text into a candidate profile.
-2. If parsing confidence is below the threshold, use AI to extract the profile.
-3. Load job profile and compute match score + skill gaps.
-4. Generate an AI explanation for the match.
-5. Build and export a report.
-
-## Requirements
-- Python 3.10+ recommended
-- Packages in `requirements.txt`
-
-## Setup
+## Quick Start
 1. Create and activate a virtual environment.
 2. Install dependencies:
 
@@ -28,44 +17,50 @@ Analyze a resume against a job profile, score the match, and generate a plain-te
 pip install -r requirements.txt
 ```
 
-3. Create a `.env` file in the project root:
+3. (Optional) Create a `.env` file in the project root (Grok/xAI):
 
 ```env
-OPENAI_API_KEY=your_api_key_here
+GROK_API_KEY=your_api_key_here
 ```
 
-AI features are optional. If the key is missing or the API is unavailable, the pipeline continues without AI outputs.
-
-## Run
-From the project root:
+4. Run the pipeline:
 
 ```bash
 python -m src.main
 ```
 
-The default inputs are:
+AI features are optional. If the Grok API key is missing or the service is unavailable, the pipeline continues without AI outputs.
+
+## Default Inputs
 - Resume: `data/incoming_resumes/resume_ai_test.txt`
 - Job profile: `data/job_profiles/python_developer.json`
 
-The report is saved to:
+## Output
+Reports are saved to:
 - `data/processed/reports/<Candidate_Name>.txt`
 
-## Configure Inputs
-Edit the paths in `src/main.py`:
-- `resume_path`
-- `job_path`
-
-## Configuration
-- Thresholds and limits: `src/config/settings.json`
-- AI prompts: `src/config/prompts.json`
-
-## Output Format
-Reports include:
+Each report includes:
 - Candidate and job summary
 - Match score
 - Matched and missing skills
-- AI explanation
+- AI explanation (when available)
 - Recommendation label
+
+## How It Works
+1. Parse resume text into a candidate profile.
+2. If confidence is below the threshold, use AI to extract the profile.
+3. Load the job profile and compute match score and skill gaps.
+4. Generate an AI explanation for the match (optional).
+5. Build and export the report.
+
+## Configuration
+- Runtime thresholds and limits: `src/config/settings.json`
+- AI prompts: `src/config/prompts.json`
+- Input paths: update `resume_path` and `job_path` in `src/main.py`
+
+## Requirements
+- Python 3.10+ recommended
+- Packages listed in `requirements.txt`
 
 ## Project Layout
 ```
@@ -87,5 +82,5 @@ data/
 ```
 
 ## Troubleshooting
-- If AI output is empty, check that `OPENAI_API_KEY` is set.
-- If imports fail, ensure you are running from the project root with `python -m src.main`.
+- If AI output is empty, confirm `GROK_API_KEY` is set.
+- If imports fail, run from the project root with `python -m src.main`.

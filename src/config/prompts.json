@@ -1,5 +1,5 @@
 {
-  "extraction": "Extract name, email, skills, experience, education from resume text as JSON.",
+  "extraction": "You are a resume parser. Extract the resume into STRICT JSON only.\n\nRules:\n- Output ONLY valid JSON\n- No explanations\n- No markdown\n- No extra text\n- JSON keys must be exactly: name, email, skills, experience, education\n- skills must be an array of strings\n- experience must be a number (years)\n- If a field is unknown, use null\n\nExample output:\n{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"skills\": [\"Python\", \"Django\"],\n  \"experience\": 4,\n  \"education\": \"B.Tech in Computer Science\"\n}",
   "categorization": "Classify skills into technical and soft skills.",
   "matching": "Explain why this candidate matches or does not match the job.",
   "recommendation": "Generate interview questions based on candidate profile."
