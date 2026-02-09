@@ -1,0 +1,15 @@
+# Core language utilities
+python-dotenv==1.0.1
+
+# OpenAI / LLM integration
+openai==0.28.1
+
+# Fuzzy matching for skills
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.25.1
+
+# Data handling (optional but professional)
+pandas==2.2.2
+
+# Logging & testing support (standard, lightweight)
+pytest==8.2.0

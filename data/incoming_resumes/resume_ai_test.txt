@@ -1,0 +1,25 @@
+Hi, I’m Arjun.
+
+You can reach me anytime at arjun.mishra.work@gmail.com or on my phone.
+I’ve been building software professionally for about four and a half years now,
+mostly working with backend systems and data-heavy applications.
+
+Over the last few years, I’ve spent most of my time writing Python services,
+designing REST APIs, and working closely with SQL databases.
+I’ve also used Django and Flask extensively, and recently started
+working with FastAPI for performance-critical services.
+
+In my previous role at a fintech startup, I was responsible for developing
+transaction processing pipelines, integrating third-party APIs,
+and ensuring data consistency across services.
+I collaborated closely with frontend teams and product managers
+to ship features on tight deadlines.
+
+Before that, I worked as a junior developer where I got hands-on experience
+with Git, Linux environments, Docker containers, and basic cloud deployments.
+
+Academically, I completed my undergraduate studies in Computer Science
+from Visvesvaraya Technological University in 2019.
+
+I enjoy mentoring juniors, writing clean code, and continuously improving
+system reliability.

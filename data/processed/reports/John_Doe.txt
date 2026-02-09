@@ -1,0 +1,24 @@
+
+==================================================
+            CANDIDATE ANALYSIS REPORT
+==================================================
+
+Candidate Name : John Doe
+Email          : john.doe@gmail.com
+Job Role       : Python Developer
+Match Score    : 70/100
+
+------------------ SKILLS -------------------------
+Matched Skills :
+flask, git, sql, python
+
+Missing Skills :
+None
+
+---------------- AI EXPLANATION -------------------
+Candidate scored 70%. Matched skills: ['flask', 'git', 'sql', 'python']. Missing skills: []. Recommendation based on rule-based analysis.
+
+---------------- RECOMMENDATION ------------------
+✓ RECOMMENDED
+
+==================================================

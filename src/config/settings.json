@@ -1,0 +1,5 @@
+{
+  "min_match_score": 60,
+  "fuzzy_threshold": 85,
+  "max_resumes_per_batch": 20
+}

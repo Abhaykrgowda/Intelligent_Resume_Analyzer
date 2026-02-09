@@ -1,0 +1,11 @@
+{
+  "title": "Python Developer",
+  "required_skills": [
+    "python",
+    "flask",
+    "sql",
+    "git"
+  ],
+  "min_experience": 2,
+  "education": "BTECH"
+}

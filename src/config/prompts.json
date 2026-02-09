@@ -1,0 +1,6 @@
+{
+  "extraction": "Extract name, email, skills, experience, education from resume text as JSON.",
+  "categorization": "Classify skills into technical and soft skills.",
+  "matching": "Explain why this candidate matches or does not match the job.",
+  "recommendation": "Generate interview questions based on candidate profile."
+}
